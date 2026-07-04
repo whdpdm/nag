@@ -1,0 +1,191 @@
+[
+  {
+    "set_id": 1,
+    "style_hint": "벼락치기형 깃허브 학대파",
+    "sha": "c1b2a3f",
+    "author": "Sophie",
+    "date": "2026-07-01T23:15:00Z",
+    "message": "feat: 메인 레이아웃 및 깃허브 API 연동 기초 틀 작업",
+    "stats": { "additions": 120, "deletions": 5, "files_changed": 3 }
+  },
+  {
+    "set_id": 1,
+    "style_hint": "벼락치기형 깃허브 학대파",
+    "sha": "d4e5f6a",
+    "author": "Sophie",
+    "date": "2026-07-04T02:40:00Z",
+    "message": "fix: 아 왜 안돼",
+    "stats": { "additions": 450, "deletions": 380, "files_changed": 12 }
+  },
+  {
+    "set_id": 1,
+    "style_hint": "벼락치기형 깃허브 학대파",
+    "sha": "e7f8a9b",
+    "author": "Sophie",
+    "date": "2026-07-04T03:12:00Z",
+    "message": "fix",
+    "stats": { "additions": 15, "deletions": 2, "files_changed": 1 }
+  },
+  {
+    "set_id": 1,
+    "style_hint": "벼락치기형 깃허브 학대파",
+    "sha": "f1a2b3c",
+    "author": "Sophie",
+    "date": "2026-07-04T04:55:00Z",
+    "message": "제발 되게 해주세요",
+    "stats": { "additions": 890, "deletions": 40, "files_changed": 22 }
+  },
+  {
+    "set_id": 1,
+    "style_hint": "벼락치기형 깃허브 학대파",
+    "sha": "a4b5c6d",
+    "author": "Sophie",
+    "date": "2026-07-04T05:20:00Z",
+    "message": ".",
+    "stats": { "additions": 2, "deletions": 1, "files_changed": 1 }
+  },
+  {
+    "set_id": 2,
+    "style_hint": "과도한 완벽주의형 분리불안러",
+    "sha": "b1c2d3e",
+    "author": "dev_sophie",
+    "date": "2026-07-02T14:00:00Z",
+    "message": "docs: README.md 수정",
+    "stats": { "additions": 2, "deletions": 0, "files_changed": 1 }
+  },
+  {
+    "set_id": 2,
+    "style_hint": "과도한 완벽주의형 분리불안러",
+    "sha": "c3d4e5f",
+    "author": "dev_sophie",
+    "date": "2026-07-02T14:01:30Z",
+    "message": "docs: README 오타 수정",
+    "stats": { "additions": 1, "deletions": 1, "files_changed": 1 }
+  },
+  {
+    "set_id": 2,
+    "style_hint": "과도한 완벽주의형 분리불안러",
+    "sha": "d5e6f7a",
+    "author": "dev_sophie",
+    "date": "2026-07-02T14:03:00Z",
+    "message": "docs: 아 마침표 빠트려서 다시 수정",
+    "stats": { "additions": 1, "deletions": 1, "files_changed": 1 }
+  },
+  {
+    "set_id": 2,
+    "style_hint": "과도한 완벽주의형 분리불안러",
+    "sha": "e7f8a9b",
+    "author": "dev_sophie",
+    "date": "2026-07-02T14:10:00Z",
+    "message": "style: 변수명 ui -> UI로 변경",
+    "stats": { "additions": 5, "deletions": 5, "files_changed": 2 }
+  },
+  {
+    "set_id": 2,
+    "style_hint": "과도한 완벽주의형 분리불안러",
+    "sha": "f9a8b7c",
+    "author": "dev_sophie",
+    "date": "2026-07-02T14:12:00Z",
+    "message": "style: 세미콜론 하나 빠져서 추가",
+    "stats": { "additions": 1, "deletions": 0, "files_changed": 1 }
+  },
+  {
+    "set_id": 3,
+    "style_hint": "주객전도형 감정표현 일기장러",
+    "sha": "fe1234a",
+    "author": "Sophie_Cho",
+    "date": "2026-07-03T12:00:00Z",
+    "message": "feat: 오늘 점심으로 초밥 먹었더니 코딩 잘됨. AI 프롬프트 기초 설계 완료",
+    "stats": { "additions": 85, "deletions": 0, "files_changed": 2 }
+  },
+  {
+    "set_id": 3,
+    "style_hint": "주객전도형 감정표현 일기장러",
+    "sha": "ab5678c",
+    "author": "Sophie_Cho",
+    "date": "2026-07-03T15:30:00Z",
+    "message": "chore: 아 동아리 회의 가야 됨 귀찮다 일단 여기까지 대충 커밋",
+    "stats": { "additions": 12, "deletions": 4, "files_changed": 1 }
+  },
+  {
+    "set_id": 3,
+    "style_hint": "주객전도형 감정표현 일기장러",
+    "sha": "cd9012e",
+    "author": "Sophie_Cho",
+    "date": "2026-07-03T21:45:00Z",
+    "message": "fix: 아까 밥 먹고 한 거 다 날아가서 빡친 상태로 다시 짬",
+    "stats": { "additions": 140, "deletions": 90, "files_changed": 5 }
+  },
+  {
+    "set_id": 3,
+    "style_hint": "주객전도형 감정표현 일기장러",
+    "sha": "ef3456f",
+    "author": "Sophie_Cho",
+    "date": "2026-07-03T23:59:00Z",
+    "message": "feat: 밤샘 코딩 시작... 커피 세 잔째 마시는 중 살려줘",
+    "stats": { "additions": 310, "deletions": 20, "files_changed": 7 }
+  },
+  {
+    "set_id": 4,
+    "style_hint": "대환장 복사붙여넣기 빌런",
+    "sha": "aa11bb2",
+    "author": "user_sophie",
+    "date": "2026-07-04T10:00:00Z",
+    "message": "refactor: 패키지 이것저것 다 깔아봄",
+    "stats": { "additions": 5420, "deletions": 12, "files_changed": 45 }
+  },
+  {
+    "set_id": 4,
+    "style_hint": "대환장 복사붙여넣기 빌런",
+    "sha": "cc33dd4",
+    "author": "user_sophie",
+    "date": "2026-07-04T10:30:00Z",
+    "message": "fix: 깃허브 API 라이브러리 통째로 복사해옴",
+    "stats": { "additions": 2300, "deletions": 0, "files_changed": 8 }
+  },
+  {
+    "set_id": 4,
+    "style_hint": "대환장 복사붙여넣기 빌런",
+    "sha": "ee55ff6",
+    "author": "user_sophie",
+    "date": "2026-07-04T11:15:00Z",
+    "message": "chore: 안 쓰는 거 지우기 (근데 뭐가 안 쓰는지 모름)",
+    "stats": { "additions": 10, "deletions": 1800, "files_changed": 14 }
+  },
+  {
+    "set_id": 5,
+    "style_hint": "교과서 위장형 로봇",
+    "sha": "9a8b7c1",
+    "author": "sophie_engineer",
+    "date": "2026-07-04T09:00:00Z",
+    "message": "feat: update code",
+    "stats": { "additions": 45, "deletions": 20, "files_changed": 2 }
+  },
+  {
+    "set_id": 5,
+    "style_hint": "교과서 위장형 로봇",
+    "sha": "8b7c6d2",
+    "author": "sophie_engineer",
+    "date": "2026-07-04T10:15:00Z",
+    "message": "fix: modify something",
+    "stats": { "additions": 8, "deletions": 7, "files_changed": 1 }
+  },
+  {
+    "set_id": 5,
+    "style_hint": "교과서 위장형 로봇",
+    "sha": "7c6d5e3",
+    "author": "sophie_engineer",
+    "date": "2026-07-04T11:30:00Z",
+    "message": "test: add test",
+    "stats": { "additions": 100, "deletions": 50, "files_changed": 4 }
+  },
+  {
+    "set_id": 5,
+    "style_hint": "교과서 위장형 로봇",
+    "sha": "6d5e4f4",
+    "author": "sophie_engineer",
+    "date": "2026-07-04T13:00:00Z",
+    "message": "refactor: clean build",
+    "stats": { "additions": 0, "deletions": 0, "files_changed": 1 }
+  }
+]
