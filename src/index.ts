@@ -38,6 +38,11 @@ export {
 export { analyzeCommits } from './services/analyzerService.js';
 export { buildDashboardReport, buildDashboardViewModel } from './services/reportBuilder.js';
 export { generateMockAnalysis } from './services/mockReportService.js';
+export type { MockAnalysisOptions } from './services/mockReportService.js';
+export {
+  generateRandomCommits,
+  generateRandomDashboardReport,
+} from './services/randomMockDataService.js';
 export { COMPONENT_REGISTRY, UI_COMPONENT_IDS } from './ui/componentRegistry.js';
 export type { ComponentPropsMap, UIComponentId } from './ui/componentRegistry.js';
 export { DASHBOARD_LAYOUT } from './ui/dashboardLayout.js';

@@ -1,0 +1,35 @@
+[
+  {
+    "sha": "7fd1a60",
+    "author": "The Octocat",
+    "date": "2012-03-06T23:06:50Z",
+    "message": "Merge pull request #6 from Spaceghost/patch-1",
+    "stats": {
+      "additions": 1,
+      "deletions": 1,
+      "files_changed": 1
+    }
+  },
+  {
+    "sha": "7629413",
+    "author": "Johnneylee Jack Rollins",
+    "date": "2011-09-14T04:42:41Z",
+    "message": "New line at end of file. --Signed off by Spaceghost",
+    "stats": {
+      "additions": 1,
+      "deletions": 1,
+      "files_changed": 1
+    }
+  },
+  {
+    "sha": "553c207",
+    "author": "cameronmcefee",
+    "date": "2011-01-26T19:06:08Z",
+    "message": "first commit",
+    "stats": {
+      "additions": 1,
+      "deletions": 0,
+      "files_changed": 1
+    }
+  }
+]
