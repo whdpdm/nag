@@ -1,1 +1,89 @@
 # nag
+# 🤬 ai nag (AI 잔소리 분석기) - 개발 명세 및 가이드라인
+
+> **"잠은 자고 코딩하냐?", "커밋 메시지를 이따위로 쓸 거면 일기장에 써라!"**
+> `ai nag`는 유저의 GitHub 레포지토리 커밋 로그를 정밀 분석하여, AI가 개발자의 성향을 위트 있고 매섭게 분석한 뒤 뼈 때리는 잔소리를 제공하는 유쾌한 개발자 가상 사수(Senior Engineer) 웹 애플리케이션입니다.
+
+---
+
+## 🎯 1. 프로젝트 최종 목표 (Core Goal)
+- 유저가 자신의 GitHub 레포지토리 URL 또는 ID를 입력하면, 최근 커밋 메시지와 메타데이터를 기반으로 **'개발 성향 팩트 폭행 보고서'**를 대시보드 형태로 제공합니다.
+- 단순한 코드 라인 수 측정을 넘어, 커밋의 시간대, 주기, 메시지의 성의 유무, 감정 상태를 LLM(Claude)이 종합적으로 판단하여 유저에게 재미와 반성을 동시에 선사하는 UX를 구축합니다.
+
+---
+
+## 🌿 2. 브랜치 전략 및 히스토리 (Git Branch Strategy)
+현재 이 프로젝트는 로컬 Git 프로젝트로 관리 중이며, `realnag` 브랜치를 중심 축(Main Production)으로 설정한 후 기능별 피처 브랜치(Feature Branch)를 쪼개어 개발하고 있습니다.
+
+### 📌 메인 축
+- `realnag`: 프로젝트의 실질적인 메인(Main) 브랜치 역할을 수행합니다.
+
+### 🛠️ 피처 브랜치 구성 (작업 흐름 순)
+1. **`feature/mock-data` (완료)**
+   - AI의 프롬프트 테스트 및 성향 감별 알고리즘 검증을 위해 5가지 성향(벼락치기형, 분리불안 완벽주의형, 일기장형, 복사붙여넣기 빌런형, 영혼 없는 로봇형)의 가짜 데이터 세트(`mockCommits.json`)를 선제적으로 구축해 둔 브랜치입니다.
+2. **`feature/git-data-collector` (진행 중 🚀)**
+   - 유저가 입력한 정보를 바탕으로 GitHub REST API를 호출하여 최근 20~30개의 커밋 로그를 안정적으로 긁어오고 파싱하는 백엔드/유틸리티 개발 공간입니다.
+3. **`feature/ai-nag-analyzer` (대기)**
+   - 수집된 실제 커밋 데이터를 바탕으로 Claude API에 주입할 프롬프트 엔지니어링을 설계하고, 구조화된 JSON 출력을 받아내는 분석 엔진 개발 공간입니다.
+4. **`feature/nag-ui-main` (대기)**
+   - 위트 있는 로딩 애니메이션 및 말풍선 형태의 대시보드를 시각화하는 프론트엔드 작업 공간입니다.
+
+---
+
+## 📂 3. 데이터 아키텍처 및 설계 컨텍스트 (Data Context)
+우리는 `feature/mock-data` 브랜치에 `mockCommits.json` 파일을 미리 생성해 두었습니다. AI Agent는 이 파일의 구조를 반드시 참조하여 실제 수집기(`feature/git-data-collector`)를 설계해야 합니다.
+
+### 💡 데이터 설계 가이드라인 (AI Agent 필수 필독)
+단 하나의 커밋 메시지만으로는 개발자의 성향을 파악할 수 없습니다. 따라서 데이터 세트는 **한 명의 유저가 연속으로 저지른 커밋 히스토리(맥락)**를 묶어서 분석하도록 설계되었습니다.
+
+- **`date` (ISO 타임스탬프)**: 유저가 새벽에 코딩을 몰아서 하는지, 평일 업무 시간에 규칙적으로 하는지 감별하는 핵심 지표입니다.
+- **`stats` (`additions`, `deletions`, `files_changed`)**: 오타 하나에 1줄씩 짤짤이 커밋을 하는 '분리불안형'인지, 아니면 수천 줄을 한 번에 올리는 '폭탄 커밋형'인지 감별하기 위한 데이터입니다.
+- **`message` (커밋 메시지)**: `fix`, `.` 처럼 무성의한 메시지나, 자신의 감정을 구구절절 적은 일기장식 메시지를 잡아내어 매운맛 잔소리를 유도합니다.
+
+---
+
+## 🔧 5. GitHub 커밋 수집기 (`githubService`)
+
+### 설치
+
+```bash
+npm install
+npm run typecheck          # 컴파일 에러 사전 검증
+cp .env.example .env       # 선택: GITHUB_TOKEN 설정
+```
+
+### 사용법
+
+```bash
+# CLI로 public 레포 커밋 수집 (결과 → commits-output.json)
+npm run fetch-commits -- octocat/Hello-World
+
+# 또는 전체 URL
+npm run fetch-commits -- https://github.com/octocat/Hello-World
+```
+
+### 코드에서 import
+
+```typescript
+import { fetchRecentCommitsFromInput } from './src/index.js';
+
+const commits = await fetchRecentCommitsFromInput('owner/repo');
+// → CommitRecord[] (mockCommits.json 호환, set_id/style_hint 제외)
+```
+
+### 환경 변수
+
+| 변수 | 필수 | 설명 |
+|---|---|---|
+| `GITHUB_TOKEN` | 선택 | 설정 시 rate limit 5,000/h, private 레포 접근 가능 |
+| `COMMIT_FETCH_LIMIT` | 선택 | 수집 개수 (기본 25, 범위 20~30) |
+
+---
+
+## 🤖 4. AI Agent를 위한 개발 지침 (Instruction for AI Agent)
+너는 이 프로젝트를 함께 이끌어갈 수석 풀스택 아키텍트(Senior Full-Stack Architect)야. 
+이 `README.md`를 읽었다면 다음 지침을 엄격히 준수하여 개발에 임해줘.
+
+1. **컨텍스트 이해**: 항상 프로젝트 전체 구조와 Git 히스토리, `mockCommits.json`을 먼저 분석하고 움직여라.
+2. **점진적 구현**: 현재 작업 브랜치는 `feature/git-data-collector`이다. 깃허브 API를 안전하게 파싱할 코드를 제안하되, 무작정 코드를 짜지 말고 **구조 설계안을 먼저 인간 개발자(나)에게 브리핑하고 승인을 요청**하라.
+3. **명확한 근거 제시**: 특정 라이브러리(예: `@octokit/core`, `axios`)를 사용할 때는 왜 이 방식을 제안하는지 기술적 근거를 명확히 밝혀라.
